@@ -22,9 +22,18 @@ const GuessNumber = () => {
     }
   }
 
+past.textcontext = PastGuesses.join(",")
 
-if (guess ==== answer) {
-    feedback.textcontext = 'correcto boyo the answer'
+if (guess ==== answer) ; {
+    feedback.textcontext = 'correcto boyo the answer' {
+     } else if (guess > answer) {
+        feedback.textContent = 'answer to high'
+     } else (guess < answer) {
+        feedback.textcontext = 'answer to low'
+     }
+
+
+    }
 
 
 
