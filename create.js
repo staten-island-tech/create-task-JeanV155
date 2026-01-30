@@ -1,26 +1,34 @@
-let PastGuessesArray = [];
+let PastGuesses = [];
+  const answer = Math.floor(Math.random() * 20) + 1; 
 
 const GuessNumber = () => {
-  const n = Math.floor(Math.random() * 20) + 1;
-  let guess;
+  const input = document.getElementById("inputBtn")
+  const guess = document.getElementById("guessBtn")
+  const PastGuesses = document.getElementById("PastGuesses")
+  const feedback = document.getElementById("feedback")
 
-while(n !== answer) {
-    n = number(prompt("guess a number any number"));
+ button.addEventListener("click", () => {
+  const guess = Number(input.value);
+  pastGuesses.push(guess);
 
-    PastGuesses.push(n)
-
-    if (guess > n) {
-        console.log("answer to low");
- } else if (guess < n)
-    console.log("answer to low ");
-    else {
-        console.log("just right boyo");
-        
-
-
-
+ for (let i = 0; i < pastGuesses.length; i++) {
+    const g = pastGuesses[i];
+    if (g > answer) {
+      console.log(`${g} is too high`);
+    } else if (g < answer) {
+      console.log(`${g} is too low`);
+    } else {
+      console.log(`${g} is just right!`);
     }
+  }
+
+
+if (guess ==== answer) {
+    feedback.textcontext = 'correcto boyo the answer'
+
+
+
 
 
 }
-}
+
