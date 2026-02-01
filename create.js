@@ -1,43 +1,51 @@
-let PastGuesses = [];
-  const answer = Math.floor(Math.random() * 20) + 1; 
+let PastGuesses = []; // array to store past guesses
+const answer = Math.floor(Math.random() * 20) + 1; // random answer
 
 const GuessNumber = () => {
-  const input = document.getElementById("inputBtn")
-  const guess = document.getElementById("guessBtn")
-  const PastGuesses = document.getElementById("PastGuesses")
-  const feedback = document.getElementById("feedback")
+  const input = document.getElementById("inputBtn");       // input field
+  const guessBtn = document.getElementById("guessBtn");    // guess button
+  const pastElement = document.getElementById("PastElements"); // element to show past guesses
+  const feedback = document.getElementById("feedback");   // element to show feedback
 
- button.addEventListener("click", () => {
-  const guess = Number(input.value);
-  pastGuesses.push(guess);
+  guessBtn.addEventListener("click", () => {
+    const guess = Number(input.value); 
+    // save guess
+    PastGuesses.push(guess);
 
- for (let i = 0; i < pastGuesses.length; i++) {
-    const g = pastGuesses[i];
-    if (g > answer) {
-      console.log(`${g} is too high`);
-    } else if (g < answer) {
-      console.log(`${g} is too low`);
+    // log all past guesses (optional)
+    for (let i = 0; i < PastGuesses.length; i++) {
+      const g = PastGuesses[i];
+      if (g > answer) {
+        console.log(`${g} is too high`);
+      } else if (g < answer) {
+        console.log(`${g} is too low`);
+      } else {
+        console.log(`${g} is just right!`);
+      }
+    }
+
+    // update past guesses in UI
+    if (pastElement) {
+      pastElement.textContent = PastGuesses.join(", ");
+    }
+
+    
+    if (guess === answer) {
+      feedback.textContent = "Correct! The answer is " + answer;
+    } else if (guess > answer) {
+      feedback.textContent = "Answer too high";
     } else {
-      console.log(`${g} is just right!`);
+      feedback.textContent = "Answer too low";
     }
-  }
-
-past.textcontext = PastGuesses.join(",")
-
-if (guess ==== answer) ; {
-    feedback.textcontext = 'correcto boyo the answer' {
-     } else if (guess > answer) {
-        feedback.textContent = 'answer to high'
-     } else (guess < answer) {
-        feedback.textcontext = 'answer to low'
-     }
+  });
+};
 
 
-    }
+GuessNumber();
 
 
 
 
 
-}
+
 
