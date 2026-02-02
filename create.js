@@ -1,18 +1,18 @@
-let PastGuesses = []; // array to store past guesses
-const answer = Math.floor(Math.random() * 20) + 1; // random answer
+let PastGuesses = [];
+const answer = Math.floor(Math.random() * 20) + 1; 
 
-const GuessNumber = () => {
-  const input = document.getElementById("inputBtn");       // input field
-  const guessBtn = document.getElementById("guessBtn");    // guess button
-  const pastElement = document.getElementById("PastElements"); // element to show past guesses
-  const feedback = document.getElementById("feedback");   // element to show feedback
+function GuessNumber ()  {
+  const input = document.getElementById("inputBtn");       
+  const guessBtn = document.getElementById("guessBtn");    
+  const pastElement = document.getElementById("PastElements");
+  const feedback = document.getElementById("feedback");  
 
   guessBtn.addEventListener("click", () => {
     const guess = Number(input.value); 
-    // save guess
+   
     PastGuesses.push(guess);
 
-    // log all past guesses (optional)
+   
     for (let i = 0; i < PastGuesses.length; i++) {
       const g = PastGuesses[i];
       if (g > answer) {
@@ -24,7 +24,7 @@ const GuessNumber = () => {
       }
     }
 
-    // update past guesses in UI
+   
     if (pastElement) {
       pastElement.textContent = PastGuesses.join(", ");
     }
@@ -38,7 +38,8 @@ const GuessNumber = () => {
       feedback.textContent = "Answer too low";
     }
   });
-};
+}; 
+
 
 
 GuessNumber();
