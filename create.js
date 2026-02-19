@@ -26,13 +26,14 @@ function GuessNumber (guess)  {
 
     
     if (guess === answer) {
-      feedback.textContent = "Correct! The answer is " + answer;
+      feedback.textContent = "Correct! right on the money " ;
     } else if (guess > answer) {
-      feedback.textContent = "Answer too high";
+      feedback.textContent = "too high";
     } else {
-      feedback.textContent = "Answer too low";
+      feedback.textContent = "too low";
     } 
 
+}
      const input = document.getElementById("inputBtn");       
   const guessBtn = document.getElementById("guessBtn");  
 
@@ -45,11 +46,11 @@ guessBtn.addEventListener("click", () => {
 
 
   });
-}; 
+ 
 
 
 
-GuessNumber();
+
 
 
 
