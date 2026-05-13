@@ -7,7 +7,6 @@ function GuessNumber (guess)  {
   const feedback = document.getElementById("feedback");  
 
   PastGuesses.push(guess);
-   
     for (let i = 0; i < PastGuesses.length; i++) {
       const g = PastGuesses[i];
       if (g > answer) {
